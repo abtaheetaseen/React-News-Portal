@@ -99,7 +99,7 @@ const NewsTab = () => {
                     <div className='flex items-center justify-center'>
                         <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-16'>
                             {
-                                technologyNews.length === 0 ? <Loader /> : recordsTechnology?.filter((item) => {
+                                technologyNews?.length === 0 ? <Loader /> : recordsTechnology?.filter((item) => {
                                     if (search == "") {
                                         return item;
                                     } else if (item?.author?.toLowerCase().includes(search?.toLowerCase())) {
