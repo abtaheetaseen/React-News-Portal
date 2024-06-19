@@ -47,9 +47,9 @@ const NewsTab = () => {
     const numberOfPagesTechnology = Math.ceil(technologyNews?.length / newsPerPage);
     const numberOfPagesBusiness = Math.ceil(businessNews?.length / newsPerPage);
     const numberOfPagesSports = Math.ceil(sportsNews?.length / newsPerPage);
-    const pagesTechnology = [...Array(numberOfPagesTechnology + 1).keys()].slice(1);
-    const pagesBusiness = [...Array(numberOfPagesBusiness + 1).keys()].slice(1);
-    const pagesSports = [...Array(numberOfPagesSports + 1).keys()].slice(1);
+    // const pagesTechnology = [...Array(numberOfPagesTechnology + 1).keys()].slice(1);
+    // const pagesBusiness = [...Array(numberOfPagesBusiness + 1).keys()].slice(1);
+    // const pagesSports = [...Array(numberOfPagesSports + 1).keys()].slice(1);
 
     const prevPage = () => {
         if (currentPage !== 1) {
@@ -99,7 +99,7 @@ const NewsTab = () => {
                     <div className='flex items-center justify-center'>
                         <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-16'>
                             {
-                                recordsTechnology?.filter((item) => {
+                                technologyNews?.length === 0 ? <Loader /> : recordsTechnology?.filter((item) => {
                                     if (search == "") {
                                         return item;
                                     } else if (item?.author?.toLowerCase().includes(search?.toLowerCase())) {
@@ -111,7 +111,7 @@ const NewsTab = () => {
                     </div>
 
                     {/* pagination technology */}
-                    <div className='flex items-center justify-center mt-[70px] gap-3'>
+                    {/* <div className='flex items-center justify-center mt-[70px] gap-3'>
                         <button onClick={prevPage} className='btn btn-sm'>
                             Prev
                         </button>
@@ -125,7 +125,7 @@ const NewsTab = () => {
                         <button onClick={nextPageTechnology} className='btn btn-sm'>
                             Next
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
                 <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Business" />
@@ -145,7 +145,7 @@ const NewsTab = () => {
                     </div>
 
                     {/* pagination business */}
-                    <div className='flex items-center justify-center mt-[70px] gap-3'>
+                    {/* <div className='flex items-center justify-center mt-[70px] gap-3'>
                         <button onClick={prevPage} className='btn btn-sm'>
                             Prev
                         </button>
@@ -159,7 +159,7 @@ const NewsTab = () => {
                         <button onClick={nextPageBusiness} className='btn btn-sm'>
                             Next
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
                 <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Sports" />
@@ -179,7 +179,7 @@ const NewsTab = () => {
                     </div>
 
                     {/* pagination sports */}
-                    <div className='flex items-center justify-center mt-[70px] gap-3'>
+                    {/* <div className='flex items-center justify-center mt-[70px] gap-3'>
                         <button onClick={prevPage} className='btn btn-sm'>
                             Prev
                         </button>
@@ -193,7 +193,7 @@ const NewsTab = () => {
                         <button onClick={nextPageSports} className='btn btn-sm'>
                             Next
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
@@ -202,7 +202,3 @@ const NewsTab = () => {
 }
 
 export default NewsTab
-
-
-
-// technologyNews?.length === 0 ? <Loader /> : 
