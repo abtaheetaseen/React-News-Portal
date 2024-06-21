@@ -35,29 +35,6 @@ const NewsTab = () => {
             })
     }, [])
 
-//     const apiKey = "638ee0cb7a5d432e8936d744d754dcbe";
-
-// useEffect(() => {
-//     const fetchData = async (category, setter) => {
-//         try {
-//             const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=${apiKey}`);
-
-//             if (!response.ok) {
-//                 throw new Error(`Error fetching ${category} news: ${response.status}`);
-//             }
-
-//             const data = await response.json();
-//             setter(data.articles || []); 
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     };
-
-//     fetchData("technology", setTechnologyNews);
-//     fetchData("business", setBusinessNews);
-//     fetchData("sports", setSportsNews);
-// }, []);
-
     const [search, setSearch] = useState("");
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -70,6 +47,21 @@ const NewsTab = () => {
     const numberOfPagesTechnology = Math.ceil(technologyNews?.length / newsPerPage);
     const numberOfPagesBusiness = Math.ceil(businessNews?.length / newsPerPage);
     const numberOfPagesSports = Math.ceil(sportsNews?.length / newsPerPage);
+
+    const pagesTechnology = []
+    for(let i = 1; i < numberOfPagesTechnology + 1; i++){
+        pagesTechnology.push(i)
+    }
+
+    const pagesBusiness = []
+    for(let i = 1; i < numberOfPagesBusiness + 1; i++){
+        pagesBusiness.push(i)
+    }
+
+    const pagesSports = []
+    for(let i = 1; i < numberOfPagesSports + 1; i++){
+        pagesSports.push(i)
+    }
     // const pagesTechnology = [...Array(numberOfPagesTechnology + 1).keys()].slice(1);
     // const pagesBusiness = [...Array(numberOfPagesBusiness + 1).keys()].slice(1);
     // const pagesSports = [...Array(numberOfPagesSports + 1).keys()].slice(1);
@@ -134,7 +126,7 @@ const NewsTab = () => {
                     </div>
 
                     {/* pagination technology */}
-                    {/* <div className='flex items-center justify-center mt-[70px] gap-3'>
+                     <div className='flex items-center justify-center mt-[70px] gap-3'>
                         <button onClick={prevPage} className='btn btn-sm'>
                             Prev
                         </button>
@@ -148,7 +140,7 @@ const NewsTab = () => {
                         <button onClick={nextPageTechnology} className='btn btn-sm'>
                             Next
                         </button>
-                    </div> */}
+                    </div> 
                 </div>
 
                 <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Business" />
@@ -168,7 +160,7 @@ const NewsTab = () => {
                     </div>
 
                     {/* pagination business */}
-                    {/* <div className='flex items-center justify-center mt-[70px] gap-3'>
+                    <div className='flex items-center justify-center mt-[70px] gap-3'>
                         <button onClick={prevPage} className='btn btn-sm'>
                             Prev
                         </button>
@@ -182,7 +174,7 @@ const NewsTab = () => {
                         <button onClick={nextPageBusiness} className='btn btn-sm'>
                             Next
                         </button>
-                    </div> */}
+                    </div>
                 </div>
 
                 <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Sports" />
@@ -202,7 +194,7 @@ const NewsTab = () => {
                     </div>
 
                     {/* pagination sports */}
-                    {/* <div className='flex items-center justify-center mt-[70px] gap-3'>
+                    <div className='flex items-center justify-center mt-[70px] gap-3'>
                         <button onClick={prevPage} className='btn btn-sm'>
                             Prev
                         </button>
@@ -216,7 +208,7 @@ const NewsTab = () => {
                         <button onClick={nextPageSports} className='btn btn-sm'>
                             Next
                         </button>
-                    </div> */}
+                    </div>
                 </div>
 
             </div>
