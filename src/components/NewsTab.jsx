@@ -62,9 +62,6 @@ const NewsTab = () => {
     for(let i = 1; i < numberOfPagesSports + 1; i++){
         pagesSports.push(i)
     }
-    // const pagesTechnology = [...Array(numberOfPagesTechnology + 1).keys()].slice(1);
-    // const pagesBusiness = [...Array(numberOfPagesBusiness + 1).keys()].slice(1);
-    // const pagesSports = [...Array(numberOfPagesSports + 1).keys()].slice(1);
 
     const prevPage = () => {
         if (currentPage !== 1) {
