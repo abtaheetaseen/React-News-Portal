@@ -11,52 +11,52 @@ const NewsTab = () => {
     const [sportsNews, setSportsNews] = useState([]);
 
 
-    // useEffect(() => {
-    //     fetch("https://newsapi.org/v2/everything?q=technology&apiKey=638ee0cb7a5d432e8936d744d754dcbe")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setTechnologyNews(data?.articles)
-    //         })
-    // }, [])
+    useEffect(() => {
+        fetch("technology.json")
+            .then(res => res.json())
+            .then(data => {
+                setTechnologyNews(data)
+            })
+    }, [])
 
-    // useEffect(() => {
-    //     fetch("https://newsapi.org/v2/everything?q=business&apiKey=638ee0cb7a5d432e8936d744d754dcbe")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setBusinessNews(data?.articles)
-    //         })
-    // }, [])
+    useEffect(() => {
+        fetch("business.json")
+            .then(res => res.json())
+            .then(data => {
+                setBusinessNews(data)
+            })
+    }, [])
 
-    // useEffect(() => {
-    //     fetch("https://newsapi.org/v2/everything?q=sports&apiKey=638ee0cb7a5d432e8936d744d754dcbe")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setSportsNews(data?.articles)
-    //         })
-    // }, [])
+    useEffect(() => {
+        fetch("sports.json")
+            .then(res => res.json())
+            .then(data => {
+                setSportsNews(data)
+            })
+    }, [])
 
-    const apiKey = "638ee0cb7a5d432e8936d744d754dcbe";
+//     const apiKey = "638ee0cb7a5d432e8936d744d754dcbe";
 
-useEffect(() => {
-    const fetchData = async (category, setter) => {
-        try {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=${apiKey}`);
+// useEffect(() => {
+//     const fetchData = async (category, setter) => {
+//         try {
+//             const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=${apiKey}`);
 
-            if (!response.ok) {
-                throw new Error(`Error fetching ${category} news: ${response.status}`);
-            }
+//             if (!response.ok) {
+//                 throw new Error(`Error fetching ${category} news: ${response.status}`);
+//             }
 
-            const data = await response.json();
-            setter(data.articles || []); 
-        } catch (error) {
-            console.error(error);
-        }
-    };
+//             const data = await response.json();
+//             setter(data.articles || []); 
+//         } catch (error) {
+//             console.error(error);
+//         }
+//     };
 
-    fetchData("technology", setTechnologyNews);
-    fetchData("business", setBusinessNews);
-    fetchData("sports", setSportsNews);
-}, []);
+//     fetchData("technology", setTechnologyNews);
+//     fetchData("business", setBusinessNews);
+//     fetchData("sports", setSportsNews);
+// }, []);
 
     const [search, setSearch] = useState("");
 
