@@ -12,7 +12,7 @@ const NewsTab = () => {
 
 
     useEffect(() => {
-        fetch("https://newsapi.org/v2/everything?q=technology&apiKey=b12bba7e0e0d45a9babe5288419c430a")
+        fetch("https://newsapi.org/v2/everything?q=technology&apiKey=638ee0cb7a5d432e8936d744d754dcbe")
             .then(res => res.json())
             .then(data => {
                 setTechnologyNews(data?.articles)
@@ -20,7 +20,7 @@ const NewsTab = () => {
     }, [])
 
     useEffect(() => {
-        fetch("https://newsapi.org/v2/everything?q=business&apiKey=b12bba7e0e0d45a9babe5288419c430a")
+        fetch("https://newsapi.org/v2/everything?q=business&apiKey=638ee0cb7a5d432e8936d744d754dcbe")
             .then(res => res.json())
             .then(data => {
                 setBusinessNews(data?.articles)
@@ -28,7 +28,7 @@ const NewsTab = () => {
     }, [])
 
     useEffect(() => {
-        fetch("https://newsapi.org/v2/everything?q=sports&apiKey=b12bba7e0e0d45a9babe5288419c430a")
+        fetch("https://newsapi.org/v2/everything?q=sports&apiKey=638ee0cb7a5d432e8936d744d754dcbe")
             .then(res => res.json())
             .then(data => {
                 setSportsNews(data?.articles)
